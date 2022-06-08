@@ -1,0 +1,23 @@
+type Customer @model {
+  id: ID!
+  name: String!
+  email: String!
+  orders: [Order]
+}
+
+type Product @model {
+  id: ID!
+  sku: String!
+  name: String!
+  description: String
+  price: Float!
+  currency: String!
+  inventory: Int!
+}
+
+type Order @model {
+  id: ID!
+  customer: Customer!
+  products: [Product]!
+}
+
